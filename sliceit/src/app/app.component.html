@@ -1,0 +1,183 @@
+
+<div class="container container-border">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+            <img src="../assets/sliceit_logo.png" width="100%"/> 
+    </div>   
+</div> 
+    <div class="row">
+        <div class="col-md-12">
+                <span class="text-center"><b>ORDER NUMBER:</b></span>
+                <span class="text-center pull-right">{{orderInfo.sliceItOrderId}}</span>    
+        </div>
+        <div class="col-md-6">
+                <span class="text-center"><b>DATE:</b></span>
+                <span class="text-center pull-right">{{orderInfo.firstDate}}</span>
+        </div>
+        <div class="col-md-6">
+                <span class="text-center"><b>TIME:</b></span>
+                <span class="text-center pull-right">{{orderInfo.orderTime}}</span>
+        </div>
+    </div>
+    <div class="row order-summary">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="text-center"><b>ORDER SUMMARY</b></h4>
+        </div>
+    </div>
+    <div class="row order-no-row">
+            <div class="col-md-6">
+                    <span class="text-center"><b>Order Total:</b></span>
+                    <span class="text-center pull-right">{{orderInfo.orderTotal}}</span>
+            </div>
+            <div class="col-md-6">
+                    <span class="text-center"><b>Total Paid:</b></span>
+                    <span class="text-center pull-right">{{orderInfo.orderTotalPaid}}</span>
+            </div>
+    </div>
+    <div class="row order-summary">
+            <div class="col-md-6">
+                <span class="pull-left h4"><b>Total Owing:</b></span>
+            </div>
+
+            <div class="col-md-6">
+                <span class="pull-right h4">{{orderInfo.orderTotalOwing}}</span>
+            </div>
+    </div>
+    
+    
+    <div class="row order-installment-row">
+            <div class="col-md-4">
+                    <span class="text-center">DATE:</span>
+                    <span class="text-center pull-right">{{orderInfo.firstDate}}</span>
+            </div>
+            <div class="col-md-4">
+                    <span class="text-center">Due In:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt}}</span>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right">
+                    <a [class]="firstBtn" (click)="firstInstallment()"> {{firstBtnValue}}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <span class="text-center">Payment Method:</span>
+                    <span class="text-center pull-right">Credit Card</span>
+            </div>
+            
+            <div class="col-md-6">
+                    <span class="text-center">Amount:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt/4}}</span>
+            </div>
+    </div>
+
+
+    <div class="row order-installment-row">
+            <div class="col-md-4">
+                    <span class="text-center">DATE:</span>
+                    <span class="text-center pull-right">{{orderInfo.secondDate}}</span>
+            </div>
+            <div class="col-md-4">
+                    <span class="text-center">Due In:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt-orderInfo.productDetails.productAmt/4    }}</span>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right">
+                    <a [class]="secondBtn" (click)="secondInstallment()"> {{secondBtnValue}}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <span class="text-center">Payment Method:</span>
+                    <span class="text-center pull-right">Credit Card</span>
+            </div>
+            
+            <div class="col-md-6">
+                    <span class="text-center">Amount:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt/2}}</span>
+            </div>
+    </div>
+
+
+    <div class="row order-installment-row">
+            <div class="col-md-4">
+                    <span class="text-center">DATE:</span>
+                    <span class="text-center pull-right">{{orderInfo.thirdDate}}</span>
+            </div>
+            <div class="col-md-4">
+                    <span class="text-center">Due In:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt/2}}</span>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right">
+                    <a [class]="thirdBtn" (click)="thirdInstallment()">{{thirdBtnValue}}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <span class="text-center">Payment Method:</span>
+                    <span class="text-center pull-right">Credit Card</span>
+            </div>
+            
+            <div class="col-md-6">
+                    <span class="text-center">Amount:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt/4}}</span>
+            </div>
+    </div>
+
+
+
+    <div class="row order-installment-row">
+            <div class="col-md-4">
+                    <span class="text-center">DATE:</span>
+                    <span class="text-center pull-right">{{orderInfo.fourthDate}}</span>
+            </div>
+            <div class="col-md-4">
+                    <span class="text-center">Due In:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt/4}}</span>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right">
+                    <a [class]="fourthBtn" (click)="fourthInstallment()"> {{fourthBtnValue}}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <span class="text-center">Payment Method:</span>
+                    <span class="text-center pull-right">Credit Card</span>
+            </div>
+            
+            <div class="col-md-6">
+                    <span class="text-center">Amount:</span>
+                    <span class="text-center pull-right">{{orderInfo.productDetails.productAmt/4}}</span>
+            </div>
+    </div>
+    
+    <div class="row order-installment-row">
+            <div class="col-md-12">
+                    <div class="col-md-6"><b>Product Description:</b></div>
+                    <div class="col-md-6">
+                            {{orderInfo.productDetails.productName}}<br/>
+                            {{orderInfo.productDetails.productDescp}}<br/>
+                </div>
+            </div>
+        </div>
+    <div class="row order-installment-row">
+        <div class="col-md-12">
+                <div class="col-md-6"><b>Delivery Address:</b></div>
+                <div class="col-md-6">{{orderInfo.orderDeliveryAddress}}</div>
+        </div>
+    </div>
+    <div class="row order-installment-row">
+            <div class="col-md-12">
+                    <div class="col-md-6"><b>Merchant Details:</b></div>
+                    <div class="col-md-6">
+                                       {{orderInfo.merchant.merchantName}}<br/>
+                                        {{orderInfo.merchant.merchantEmail}}<br/>
+                                        {{orderInfo.merchant.merchantPhoneNo}}<br/>
+                    </div>
+            </div>
+    </div>
+    <div class="row order-summary">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4 class="text-center"><b>ORDER QUERY</b></h4>
+            </div>
+    </div>
+    
+</div>
